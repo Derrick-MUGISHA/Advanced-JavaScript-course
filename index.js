@@ -337,3 +337,71 @@ while (balance < 2000) {
     month++;
     console.log(`We need ${month} Months to have a balance that is greater than 2,000 rwf when saving`);
 }
+
+ let math = Math.floor(Math.random() * 10);
+
+ console.log(math);
+
+
+ let pin 
+
+ do {
+    pin = Math.floor(Math.random() * 10000);
+    console.log(`The pin is ${pin}`);
+ } while (pin < 10);
+
+
+
+//  for.. of works with arrays and strings
+
+let fruits2 = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+
+for (const [index, value] of fruits2.entries()) {
+    if (index === 0) {
+        console.log(value.charAt(0).toUpperCase()+ value.slice(1));
+    } 
+}
+
+// for.. in works with objects
+
+const student = { name: "Grace", cohort: 3, track: "Frontend" }
+for (const key in student) {
+  console.log(`${key}: ${student[key]}`)
+}
+
+
+//  
+
+for (const number of [1,2,8,12, 43]) {
+    if (number > 10 ) {
+        console.log(`found ${number}`);
+        break;
+    }
+}
+
+
+for (let i = 0; i <= 10; i++) {
+    if (i % 2 === 0) continue;
+    console.log(i);
+}
+
+for (let i = 1; i <=5; i++) {
+    if (i === 2 && i === 3) continue;
+    console.log(`The number is ${i}`);
+}
+
+let i = 0
+while (i < 5) {
+  console.log(i)
+  i++
+}
+
+for (let row = 1; row <= 3; row++) {
+  let line = ""
+  for (let col = 1; col <= 3; col++) {
+    line += `${row * col}\t`
+  }
+  console.log(line)
+}
+
+
