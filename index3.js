@@ -2,7 +2,7 @@
 // the frist way of creating an array 
 // const mixed = ["string", number, null, object]
 
-const array = [1,2,3,2,4,5,6,7,8,9,2,10] //simple array 
+const array = [1,2,3,2,4,5,6,7,8,9,2,10,4] //simple array 
 
 // array methodes 
 
@@ -31,12 +31,35 @@ const at = array.at(22); // the returns the value of the element at the specifie
 // 3. Transformation and reodering
 
 let name = ["derrick", "grace", "james", "john", "mary", "jane", "joseph", "joshua", "julius", "jameson"]
-
+let nestedArray = [1,3,4,5,6, ["names", "class", [true,false]], 2 ,6]
 
 const joindedName = name.join(";"); // the Joins all elements of an array into a string and returns this string.with a specified separator between each element
 const reversedName = name.reverse(); // the reverses the order of the elements in an array and returns the reversed array
+const sort = name.sort((a, b) => a - b); // the sort of element in ascending order or decending order and by defualt its sorted in alphabetical ascending order 
+const contact = name.concat(array); // these is Joing two or more arrays and retuns a new array without changing the existing arrays or order
+const slice = array.slice(1, 5);
+const flatArray = nestedArray.flat(2);
 
 
 
-console.log(reversedName);
+//  3 . functional Iteration
+
+// 1. forEach  
+
+const forEach = name.forEach((element) => {
+     console.log(`the element is ${element}`);
+})
+
+//  2. map()
+const map = array.map((x) => {
+    return x * 2
+})
+
+const newArray = array
+
+
+
+console.log(map); 
+console.log(array)
+
 
