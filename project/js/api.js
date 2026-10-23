@@ -16,8 +16,6 @@ export async function fetchData(url) {
         }
         const data = await response.json();
 
-        console.log(data.products);
-        
         return data.products;
 
     } catch(error) {
