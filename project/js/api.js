@@ -1,12 +1,9 @@
 
-
-
-
 // export the function 
 
-const url = "https://dummyjson.com/products";
+export async function fetchData() {
 
-export async function fetchData(url) {
+    const url = "https://dummyjson.com/products";
 
     try {
         const response = await fetch(url);
@@ -19,9 +16,6 @@ export async function fetchData(url) {
         return data.products;
 
     } catch(error) {
-        console.log(error);
+        throw error;
     }
 }
-
-
-fetchData("https://dummyjson.com/products");

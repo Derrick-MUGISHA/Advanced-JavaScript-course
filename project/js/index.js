@@ -1,5 +1,5 @@
 
-import { storeDataToLocalStorage } from "./store.js";
+import { storeDataToLocalStorage, addToLocalStorage } from "./store.js";
 
 const container = document.getElementById("product-list");
 
@@ -196,13 +196,27 @@ document.getElementById("close-modal").addEventListener("click", () => {
 });
 
 
-function getsProducts() {
+
+async function getsProducts() {
     let products = storeDataToLocalStorage() ?? [];
+
     if (products.length === 0) {
-        container.innerHTML = `<p class="text-gray-500">No products found.</p>`;
+        products = await addToLocalStorage();
+    }
+
+    if (!products || products.length === 0) {
+        container.innerHTML = `
+            <p class="text-gray-500">No products found.</p>
+        `;
         return;
     }
+
     displayProducts(products);
 }
 
-getsProducts();
+getsProducts().catch((error) => {
+    console.error("Unable to load products:", error);
+    container.innerHTML = `
+        <p class="text-gray-500">Unable to load products. Please try again.</p>
+    `;
+});
