@@ -198,6 +198,10 @@ document.getElementById("close-modal").addEventListener("click", () => {
 
 function getsProducts() {
     let products = storeDataToLocalStorage() ?? [];
+    if (products.length === 0) {
+        container.innerHTML = `<p class="text-gray-500">No products found.</p>`;
+        return;
+    }
     displayProducts(products);
 }
 
